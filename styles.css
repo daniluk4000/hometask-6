@@ -77,7 +77,7 @@ main {
     border: 1px solid #aaa;
     border-radius: 3px;
     position: relative;
-    height: 400px;
+    height: 450px;
 }
 .cinema {
     position: relative;
@@ -86,6 +86,7 @@ main {
     width: 70%;
     background: #ddd;
     border: 2px solid #000;
+    height: 250px;
 }
 
 .cinema-title {
@@ -102,6 +103,58 @@ main {
     border: 2px solid #000;
 }
 
+.cinema-text {
+    position: absolute;
+    right: 10%;
+    top: 20px;
+    font-size: 16px;
+    background: #aaa;
+    text-transform: uppercase;
+    width: 40%;
+    text-align: center;
+    line-height: 53px;
+}
+
+.movies {
+    position: absolute;
+    top: 83px;
+    width: 40%;
+    right: 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@keyframes movie-shadow-on {
+    0% {
+        transform: none;
+    }
+    50% {
+        box-shadow: 0 0 0 0 rgba(0,0,0,0.3);
+        transform: translate(2px, 0);
+    }
+    100% {
+        transform: translate(2px, 2px);
+    }
+}
+
 .movie {
     cursor: alias;
+    background: #eee;
+    width: 32%;
+    text-align: center;
+    padding: 10px 5px;
+    margin-bottom: 2%;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,0.3);
+    transform: translate(0, 0);
+    transition: 0.3s;
+}
+
+.movie:hover {
+    transform: translate(2px, 2px);
+    animation: movie-shadow-on 0.3s ease-in-out;
+}
+
+.big.movie {
+    width: 100%;
 }
